@@ -1,0 +1,8 @@
+
+services:
+        app-service:
+                image: app-service
+                container_name: app-service
+                network_mode: host
+                restart: unless-stopped
+

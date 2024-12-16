@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Strawberry Project</h1>
+    <h2>Group 8</h2>
+
+    <form method='POST' enctype='multipart/form-data'>
+        {{form.hidden_tag()}}
+        {{form.photo()}}
+        {{form.submit()}}
+    </form>
+    {% if file_url %}
+        <div class="mt-5">
+	    <h3>Raw Image</h3>	
+            <img src="{{ file_url }}" width="640" height="360">
+        </div>
+    {% endif %}
+    {% if ai %}
+        <div class="mt-5">
+	    <h3>Ripeness Detection</h3>
+            <img src="{{ ai }}" width="640" height="360">
+        </div>
+    {% endif %}
+    {% if disease %}
+         <div class="mt-5">
+	    <h3>Disease Detection</h3>
+            <img src="{{ disease }}" width="640" height="360">
+        </div>
+    {% endif %}
+</body>
+</html>
